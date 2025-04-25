@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>更多美食</title>
+    <style>
+        /* 复用首页的样式 */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            padding: 10px;
+        }
+        .food-item {
+            width: 300px;
+            height: 300px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>第二页</h1>
+    <div class="grid-container">
+        {% for i in range(7,12) %}
+        <img 
+            src="{{ url_for('static', filename='images/thumbs/food' + i|string + '.jpg') }}" 
+            class="food-item"
+            onclick="window.location.href='/detail/{{i}}'">
+        {% endfor %}
+    </div>
+    <a href="/" style="font-size: 20px;">← 返回首页</a>
+</body>
+</html>

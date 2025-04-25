@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>美食详情</title>
+    <style>
+        .detail-img {
+            width: 800px;
+            height: 800px;
+            margin: 20px auto;
+            display: block;
+        }
+        .back-btn {
+            font-size: 20px;
+            padding: 10px 20px;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <button class="back-btn" onclick="window.history.back()">← 返回</button>
+    <img 
+        src="{{ url_for('static', filename='images/details/food' + food_id|string + '.jpg') }}" 
+        class="detail-img"
+        alt="美食详情">
+</body>
+</html>

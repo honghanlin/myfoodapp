@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>美食菜单</title>
+    <style>
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            padding: 10px;
+        }
+        .food-item {
+            width: 300px;
+            height: 300px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>第一页</h1>
+    <div class="grid-container">
+        {% for i in range(1,7) %}
+        <img 
+            src="{{ url_for('static', filename='images/thumbs/food' + i|string + '.jpg') }}" 
+            class="food-item"
+            onclick="window.location.href='/detail/{{i}}'">
+        {% endfor %}
+    </div>
+    <a href="/page2" style="font-size: 20px;">下一页 →</a>
+</body>
+</html>
